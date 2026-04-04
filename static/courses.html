@@ -1,92 +1,426 @@
 <DocType html>
 
-<html>
-    <head>
-        <title>Learn DevOps from Basics</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            header {
-                background-color: #333;
-                color: #ffe;
-                padding: 10px 0;
-                text-align: center;
-            }
-
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-            }
-
-            nav ul li {
-                display: inline;
-                margin-right: 10px;
-            }
-
-            nav ul li a {
-                color: #fff;
-                text-decoration: none;
-            }
-
-            main {
-                padding: 20px;
-            }
-
-            section {
-                margin-bottom: 20px;
-            }
-
-            footer {
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                padding: 10px 0;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="courses">Courses</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section>
-                <h1>Learn DevOps from Basics</h1>
-                <p>DevOps is a set of practices that combines software development (Dev) and IT operations (Ops)</p>
-                <p>It aims to shorten the systems development life cycle and provide continuous delivery with high software quality. DevOps is complementary with Agile software development; several DevOps aspects came from Agile methodology</p>    
-
-                <h2>Main Tutorials</h2>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa">DevOps Zero to Hero</a></p>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvLNOxX0RfndiYSt1Le9azze">AWS Zero to Hero</a></p>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIcxgCUyBHVOcWs0Krjx9xR">Azure Zero to Hero</a></p>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvI0O4PeKVV1-yJoX2AqIWuf">Terraform Zero to Hero</a></p>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvKwTyYNJCUwGPvql0TrsPgv">Python Zero to Hero</a></p>
-
-                <h2>Additional Tutorials</h2>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvKv4MFW35XRskZbQbrt6ep-">Networking Fundamentals</a></p>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvLxd5nmtmORCmhD5jkrNbuE">Ansible Zero to Hero</a></p>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvKu7OZpgj1-MzJFqZ8RBp6f">GitOps Zero to Hero</a></p>
-
-                <h2>Troubleshooting Tutorials</h2>
-                <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIrFBI1farpLS_OSUBXJMLX">Troubleshooting Kubernetes</a></p>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; Abhishek.Veeramalla</p>
-        </footer>
-    </body>
-</html>
+    <html>
+        <head>
+            <title>Learn DevOps from Basics</title>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: Arial, sans-serif;
+                }
+    
+                header {
+                    background-color: #333;
+                    color: #fff;
+                    padding: 10px 0;
+                    text-align: center;
+                }
+    
+                nav ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+    
+                nav ul li {
+                    display: inline;
+                    margin-right: 10px;
+                }
+    
+                nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+    
+                main {
+                    padding: 20px;
+                }
+    
+                section {
+                    margin-bottom: 20px;
+                }
+    
+                footer {
+                    background-color: #333;
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px 0;
+                    position: fixed;
+                    bottom: 0;
+                    width: 100%;
+                }
+    
+                /* Tetris Styles */
+                #tetris-container {
+                    text-align: center;
+                    margin: 20px 0 80px 0;
+                    padding: 20px;
+                    background-color: #1a1a2e;
+                    border-radius: 15px;
+                    display: inline-block;
+                }
+    
+                #tetris-board {
+                    border: 3px solid #e94560;
+                    background-color: #0f0f23;
+                    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+                }
+    
+                #tetris-score {
+                    color: #e94560;
+                    font-size: 24px;
+                    margin: 10px 0;
+                    font-weight: bold;
+                }
+    
+                #tetris-level {
+                    color: #00d2ff;
+                    font-size: 18px;
+                    margin: 5px 0;
+                }
+    
+                #tetris-controls {
+                    margin-top: 15px;
+                }
+    
+                .tetris-btn {
+                    background-color: #e94560;
+                    color: white;
+                    border: none;
+                    padding: 12px 24px;
+                    margin: 5px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+    
+                .tetris-btn:hover {
+                    background-color: #c73652;
+                }
+    
+                #tetris-instructions {
+                    color: #aaa;
+                    margin-top: 10px;
+                    font-size: 14px;
+                }
+    
+                .game-wrapper {
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="courses">Courses</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <main>
+                <section>
+                    <h1>Learn DevOps from Basics</h1>
+                    <p>DevOps is a set of practices that combines software development (Dev) and IT operations (Ops)</p>
+    
+                    <h2>Main Tutorials</h2>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa">DevOps Zero to Hero</a></p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvLNOxX0RfndiYSt1Le9azze">AWS Zero to Hero</a></p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIcxgCUyBHVOcWs0Krjx9xR">Azure Zero to Hero</a></p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvI0O4PeKVV1-yJoX2AqIWuf">Terraform Zero to Hero</a></p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvKwTyYNJCUwGPvql0TrsPgv">Python Zero to Hero</a></p>
+    
+                    <h2>Additional Tutorials</h2>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvKv4MFW35XRskZbQbrt6ep-">Networking Fundamentals</a></p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvLxd5nmtmORCmhD5jkrNbuE">Ansible Zero to Hero</a></p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvKu7OZpgj1-MzJFqZ8RBp6f">GitOps Zero to Hero</a></p>
+    
+                    <h2>Troubleshooting Tutorials</h2>
+                    <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIrFBI1farpLS_OSUBXJMLX">Troubleshooting Kubernetes</a></p>
+                </section>
+    
+                <section>
+                    <h2>🎮 Take a Break - Play Tetris!</h2>
+                    <div class="game-wrapper">
+                        <div id="tetris-container">
+                            <div id="tetris-score">Score: 0</div>
+                            <div id="tetris-level">Level: 1</div>
+                            <canvas id="tetris-board" width="200" height="400"></canvas>
+                            <div id="tetris-controls">
+                                <button class="tetris-btn" onclick="startGame()">Start Game</button>
+                                <button class="tetris-btn" onclick="pauseGame()">Pause</button>
+                            </div>
+                            <div id="tetris-instructions">
+                                <p>⬅️ ➡️ Move | ⬆️ Rotate | ⬇️ Soft Drop | Space: Hard Drop</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+    
+            <footer>
+                <p>&copy; Ayman Oweis - DevOps Engineer</p>
+            </footer>
+    
+            <script>
+                const canvas = document.getElementById('tetris-board');
+                const ctx = canvas.getContext('2d');
+                const COLS = 10;
+                const ROWS = 20;
+                const BLOCK = 20;
+                let score = 0;
+                let level = 1;
+                let gameRunning = false;
+                let gamePaused = false;
+                let gameInterval;
+                let board = [];
+                let currentPiece;
+    
+                const COLORS = [
+                    '#00f0f0', '#f0f000', '#a000f0',
+                    '#00f000', '#f00000', '#0000f0', '#f0a000'
+                ];
+    
+                const PIECES = [
+                    [[1,1,1,1]],
+                    [[1,1],[1,1]],
+                    [[0,1,0],[1,1,1]],
+                    [[0,1,1],[1,1,0]],
+                    [[1,1,0],[0,1,1]],
+                    [[1,0,0],[1,1,1]],
+                    [[0,0,1],[1,1,1]]
+                ];
+    
+                function createBoard() {
+                    board = [];
+                    for (let r = 0; r < ROWS; r++) {
+                        board[r] = [];
+                        for (let c = 0; c < COLS; c++) {
+                            board[r][c] = 0;
+                        }
+                    }
+                }
+    
+                function drawBoard() {
+                    ctx.fillStyle = '#0f0f23';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+                    for (let r = 0; r < ROWS; r++) {
+                        for (let c = 0; c < COLS; c++) {
+                            if (board[r][c]) {
+                                ctx.fillStyle = board[r][c];
+                                ctx.fillRect(c * BLOCK, r * BLOCK, BLOCK - 1, BLOCK - 1);
+                                ctx.strokeStyle = '#ffffff33';
+                                ctx.strokeRect(c * BLOCK, r * BLOCK, BLOCK - 1, BLOCK - 1);
+                            } else {
+                                ctx.strokeStyle = '#1a1a3e';
+                                ctx.strokeRect(c * BLOCK, r * BLOCK, BLOCK - 1, BLOCK - 1);
+                            }
+                        }
+                    }
+                }
+    
+                function newPiece() {
+                    let idx = Math.floor(Math.random() * PIECES.length);
+                    let shape = PIECES[idx].map(row => [...row]);
+                    currentPiece = {
+                        shape: shape,
+                        color: COLORS[idx],
+                        x: Math.floor(COLS / 2) - Math.floor(shape[0].length / 2),
+                        y: 0
+                    };
+    
+                    if (collision(currentPiece.x, currentPiece.y, currentPiece.shape)) {
+                        gameOver();
+                    }
+                }
+    
+                function collision(x, y, shape) {
+                    for (let r = 0; r < shape.length; r++) {
+                        for (let c = 0; c < shape[r].length; c++) {
+                            if (shape[r][c]) {
+                                let newX = x + c;
+                                let newY = y + r;
+                                if (newX < 0 || newX >= COLS || newY >= ROWS) return true;
+                                if (newY >= 0 && board[newY][newX]) return true;
+                            }
+                        }
+                    }
+                    return false;
+                }
+    
+                function drawPiece() {
+                    let s = currentPiece.shape;
+                    for (let r = 0; r < s.length; r++) {
+                        for (let c = 0; c < s[r].length; c++) {
+                            if (s[r][c]) {
+                                let x = (currentPiece.x + c) * BLOCK;
+                                let y = (currentPiece.y + r) * BLOCK;
+                                ctx.fillStyle = currentPiece.color;
+                                ctx.fillRect(x, y, BLOCK - 1, BLOCK - 1);
+                                ctx.strokeStyle = '#ffffff55';
+                                ctx.strokeRect(x, y, BLOCK - 1, BLOCK - 1);
+                            }
+                        }
+                    }
+                }
+    
+                function lockPiece() {
+                    let s = currentPiece.shape;
+                    for (let r = 0; r < s.length; r++) {
+                        for (let c = 0; c < s[r].length; c++) {
+                            if (s[r][c]) {
+                                if (currentPiece.y + r < 0) {
+                                    gameOver();
+                                    return;
+                                }
+                                board[currentPiece.y + r][currentPiece.x + c] = currentPiece.color;
+                            }
+                        }
+                    }
+                    clearLines();
+                    newPiece();
+                }
+    
+                function clearLines() {
+                    let linesCleared = 0;
+                    for (let r = ROWS - 1; r >= 0; r--) {
+                        let full = true;
+                        for (let c = 0; c < COLS; c++) {
+                            if (!board[r][c]) { full = false; break; }
+                        }
+                        if (full) {
+                            board.splice(r, 1);
+                            let emptyRow = [];
+                            for (let c = 0; c < COLS; c++) emptyRow.push(0);
+                            board.unshift(emptyRow);
+                            linesCleared++;
+                            r++;
+                        }
+                    }
+                    if (linesCleared > 0) {
+                        let points = [0, 100, 300, 500, 800];
+                        score += points[linesCleared] * level;
+                        level = Math.floor(score / 1000) + 1;
+                        document.getElementById('tetris-score').textContent = 'Score: ' + score;
+                        document.getElementById('tetris-level').textContent = 'Level: ' + level;
+                        clearInterval(gameInterval);
+                        let speed = Math.max(100, 500 - (level - 1) * 50);
+                        gameInterval = setInterval(gameLoop, speed);
+                    }
+                }
+    
+                function rotate(shape) {
+                    let newShape = [];
+                    for (let c = 0; c < shape[0].length; c++) {
+                        newShape[c] = [];
+                        for (let r = shape.length - 1; r >= 0; r--) {
+                            newShape[c].push(shape[r][c]);
+                        }
+                    }
+                    return newShape;
+                }
+    
+                function moveLeft() {
+                    if (!collision(currentPiece.x - 1, currentPiece.y, currentPiece.shape)) {
+                        currentPiece.x--;
+                    }
+                }
+    
+                function moveRight() {
+                    if (!collision(currentPiece.x + 1, currentPiece.y, currentPiece.shape)) {
+                        currentPiece.x++;
+                    }
+                }
+    
+                function moveDown() {
+                    if (!collision(currentPiece.x, currentPiece.y + 1, currentPiece.shape)) {
+                        currentPiece.y++;
+                    } else {
+                        lockPiece();
+                    }
+                }
+    
+                function hardDrop() {
+                    while (!collision(currentPiece.x, currentPiece.y + 1, currentPiece.shape)) {
+                        currentPiece.y++;
+                        score += 2;
+                    }
+                    document.getElementById('tetris-score').textContent = 'Score: ' + score;
+                    lockPiece();
+                }
+    
+                function rotatePiece() {
+                    let rotated = rotate(currentPiece.shape);
+                    if (!collision(currentPiece.x, currentPiece.y, rotated)) {
+                        currentPiece.shape = rotated;
+                    }
+                }
+    
+                function gameLoop() {
+                    if (!gamePaused) {
+                        moveDown();
+                        drawBoard();
+                        drawPiece();
+                    }
+                }
+    
+                function startGame() {
+                    if (gameRunning) {
+                        clearInterval(gameInterval);
+                    }
+                    score = 0;
+                    level = 1;
+                    gamePaused = false;
+                    gameRunning = true;
+                    document.getElementById('tetris-score').textContent = 'Score: 0';
+                    document.getElementById('tetris-level').textContent = 'Level: 1';
+                    createBoard();
+                    newPiece();
+                    drawBoard();
+                    drawPiece();
+                    gameInterval = setInterval(gameLoop, 500);
+                }
+    
+                function pauseGame() {
+                    gamePaused = !gamePaused;
+                }
+    
+                function gameOver() {
+                    gameRunning = false;
+                    clearInterval(gameInterval);
+                    ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#e94560';
+                    ctx.font = '24px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 20);
+                    ctx.fillStyle = '#fff';
+                    ctx.font = '16px Arial';
+                    ctx.fillText('Score: ' + score, canvas.width / 2, canvas.height / 2 + 15);
+                    ctx.fillText('Click Start to play again', canvas.width / 2, canvas.height / 2 + 45);
+                }
+    
+                document.addEventListener('keydown', function(e) {
+                    if (!gameRunning || gamePaused) return;
+                    switch(e.keyCode) {
+                        case 37: moveLeft(); break;
+                        case 39: moveRight(); break;
+                        case 40: moveDown(); break;
+                        case 38: rotatePiece(); break;
+                        case 32: hardDrop(); e.preventDefault(); break;
+                    }
+                    drawBoard();
+                    drawPiece();
+                });
+    
+                createBoard();
+                drawBoard();
+            </script>
+        </body>
+    </html>
