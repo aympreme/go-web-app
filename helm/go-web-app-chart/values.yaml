@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: aymanoweis/go-web-app
   pullPolicy: IfNotPresent
-  tag: "23986475826"
+  tag: "23986585351"
 
 ingress:
   enabled: true
